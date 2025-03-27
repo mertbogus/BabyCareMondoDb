@@ -1,0 +1,32 @@
+﻿@model List<ResultInstructorDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Eğitmenler</h3>
+
+<table class="table table-bordered ml-2">
+<tr>
+    <th>#</th>
+    <th>Profil Resmi</th>
+    <th>Ad Soyad</th>
+    <th>Unvan</th>
+    <th>İşlemler</th>
+</tr>
+@foreach (var item in Model)
+    {
+        <tr>
+            <td>@count</td>
+            <td><img src="@item.ImageUrl" width="100" height="100" /></td>
+            <td>@item.FullName</td>
+            <td>@item.Title</td>
+            <td>
+                <a href="/Admin/Instructor/DeleteInstructor/@item.InstructorId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Instructor/UpdateInstructor/@item.InstructorId" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Admin/Instructor/CreateInstructor" class="btn btn-primary">Yeni Eğitmen Ekle </a>
