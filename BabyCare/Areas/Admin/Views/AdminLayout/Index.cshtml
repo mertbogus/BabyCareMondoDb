@@ -4,273 +4,296 @@
 
 <!DOCTYPE html>
 <html lang="en">
-@await Component.InvokeAsync("_AdminHeadComponent")
-<body>
 
-    @{
-        Layout = null;
-    }
+@await Component.InvokeAsync("_AdminLayoutHeadComponent")
+<body class="">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+    <!-- [ navigation menu ] start -->
+    @await Component.InvokeAsync("_AdminLayoutSidebarComponent")
+    <!-- [ navigation menu ] end -->
+    <!-- [ Header ] start -->
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
 
-    <div class="wrapper">
-        <!-- Sidebar -->
-        @await Component.InvokeAsync("_AdminSideBarComponent")
-        <!-- End Sidebar -->
 
-        <div class="main-panel">
-            <div class="main-header">
-                <div class="main-header-logo">
-                    <!-- Logo Header -->
-                    <div class="logo-header" data-background-color="dark">
-                        <a href="index.html" class="logo">
-                            <img src="assets/img/kaiadmin/logo_light.svg"
-                                 alt="navbar brand"
-                                 class="navbar-brand"
-                                 height="20" />
-                        </a>
-                        <div class="nav-toggle">
-                            <button class="btn btn-toggle toggle-sidebar">
-                                <i class="gg-menu-right"></i>
-                            </button>
-                            <button class="btn btn-toggle sidenav-toggler">
-                                <i class="gg-menu-left"></i>
-                            </button>
-                        </div>
-                        <button class="topbar-toggler more">
-                            <i class="gg-more-vertical-alt"></i>
+        <div class="m-header">
+            <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+            <a href="#!" class="b-brand">
+                <!-- ========   change your logo hear   ============ -->
+                <img src="~/Templates/flat-able-admin/dist/assets/images/logo.png" alt="" class="logo">
+                <img src="~/Templates/flat-able-admin/dist/assets/images/logo-icon.png" alt="" class="logo-thumb">
+            </a>
+            <a href="#!" class="mob-toggler">
+                <i class="feather icon-more-vertical"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
+                    <div class="search-bar">
+                        <input type="text" class="form-control border-0 shadow-none" placeholder="Search hear">
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <!-- End Logo Header -->
-                </div>
-                <!-- Navbar Header -->
-                @await Component.InvokeAsync("_AdminNavbarComponent")           
-            <!-- End Navbar -->
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle h-drop" href="#" data-toggle="dropdown">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu profile-notification ">
+                            <ul class="pro-body">
+                                <li><a href="user-profile.html" class="dropdown-item"><i class="fas fa-circle"></i> Profile</a></li>
+                                <li><a href="email_inbox.html" class="dropdown-item"><i class="fas fa-circle"></i> My Messages</a></li>
+                                <li><a href="auth-signin.html" class="dropdown-item"><i class="fas fa-circle"></i> Lock Screen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown mega-menu">
+                        <a class="dropdown-toggle h-drop" href="#" data-toggle="dropdown">
+                            Mega
+                        </a>
+                        <div class="dropdown-menu profile-notification ">
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    <h6 class="mega-title">UI Element</h6>
+                                    <ul class="pro-body">
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Alert</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Button</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Badges</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Cards</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Modal</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Tabs & pills</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mega-title">Forms</h6>
+                                    <ul class="pro-body">
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Elements</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Validation</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Masking</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Wizard</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Picker</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Select</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mega-title">Application</h6>
+                                    <ul class="pro-body">
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-mail"></i> Email</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-clipboard"></i> Task</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-check-square"></i> To-Do</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-image"></i> Gallery</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-help-circle"></i> Helpdesk</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mega-title">Extension</h6>
+                                    <ul class="pro-body">
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-file-plus"></i> Editor</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-file-minus"></i> Invoice</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-calendar"></i> Full calendar</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-upload-cloud"></i> File upload</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-scissors"></i> Image cropper</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <i class="icon feather icon-bell"></i>
+                            <span class="badge badge-pill badge-danger">5</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right notification">
+                            <div class="noti-head">
+                                <h6 class="d-inline-block m-b-0">Notifications</h6>
+                                <div class="float-right">
+                                    <a href="#!" class="m-r-10">mark as read</a>
+                                    <a href="#!">clear all</a>
+                                </div>
+                            </div>
+                            <ul class="noti-body">
+                                <li class="n-title">
+                                    <p class="m-b-0">NEW</p>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="~/flat-able-admin/assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>John Doe</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>5 min</span></p>
+                                            <p>New ticket Added</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="n-title">
+                                    <p class="m-b-0">EARLIER</p>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="~/flat-able-admin/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>10 min</span></p>
+                                            <p>Prchace New Theme and make payment</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="~/flat-able-admin/assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Sara Soudein</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>12 min</span></p>
+                                            <p>currently login</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="~/flat-able-admin/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>30 min</span></p>
+                                            <p>Prchace New Theme and make payment</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="noti-footer">
+                                <a href="#!">show all</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown drp-user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="feather icon-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-notification">
+                            <div class="pro-head">
+                                <img src="~/flat-able-admin/assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                                <span>John Doe</span>
+                                <a href="auth-signin.html" class="dud-logout" title="Logout">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </div>
+                            <ul class="pro-body">
+                                <li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
+                                <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
+                                <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
 
-        <div class="container">
-                @RenderBody()
-        </div>
 
-        <footer class="footer">
-            <div class="container-fluid d-flex justify-content-between">
-                <nav class="pull-left">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://www.themekita.com">
-                                ThemeKita
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> Help </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> Licenses </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright">
-                    2024, made with <i class="fa fa-heart heart text-danger"></i> by
-                    <a href="http://www.themekita.com">ThemeKita</a>
-                </div>
-                <div>
-                    Distributed by
-                    <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
+    </header>
+    <!-- [ Header ] end -->
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">@ViewData["Title"]</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="#">@ViewData["Title"]</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
-    <!-- Custom template | don't include it in your project! -->
-    <div class="custom-template">
-        <div class="title">Settings</div>
-        <div class="custom-content">
-            <div class="switcher">
-                <div class="switch-block">
-                    <h4>Logo Header</h4>
-                    <div class="btnSwitch">
-                        <button type="button"
-                                class="selected changeLogoHeaderColor"
-                                data-color="dark"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="blue"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="purple"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="light-blue"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="green"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="orange"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="red"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="white"></button>
-                        <br />
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="dark2"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="blue2"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="purple2"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="light-blue2"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="green2"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="orange2"></button>
-                        <button type="button"
-                                class="changeLogoHeaderColor"
-                                data-color="red2"></button>
+            <!-- [ breadcrumb ] end -->
+            <!-- [ Main Content ] start -->
+            <div class="row">
+                <!-- [ sample-page ] start -->
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            @RenderBody()
+                        </div>
+
                     </div>
                 </div>
-                <div class="switch-block">
-                    <h4>Navbar Header</h4>
-                    <div class="btnSwitch">
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="dark"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="blue"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="purple"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="light-blue"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="green"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="orange"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="red"></button>
-                        <button type="button"
-                                class="selected changeTopBarColor"
-                                data-color="white"></button>
-                        <br />
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="dark2"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="blue2"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="purple2"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="light-blue2"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="green2"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="orange2"></button>
-                        <button type="button"
-                                class="changeTopBarColor"
-                                data-color="red2"></button>
-                    </div>
-                </div>
-                <div class="switch-block">
-                    <h4>Sidebar</h4>
-                    <div class="btnSwitch">
-                        <button type="button"
-                                class="changeSideBarColor"
-                                data-color="white"></button>
-                        <button type="button"
-                                class="selected changeSideBarColor"
-                                data-color="dark"></button>
-                        <button type="button"
-                                class="changeSideBarColor"
-                                data-color="dark2"></button>
-                    </div>
-                </div>
+                <!-- [ sample-page ] end -->
             </div>
-        </div>
-        <div class="custom-toggle">
-            <i class="icon-settings"></i>
+            <!-- [ Main Content ] end -->
         </div>
     </div>
-    <!-- End Custom template -->
-    </div>
-    <!--   Core JS Files   -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/core/popper.min.js"></script>
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/core/bootstrap.min.js"></script>
+    <!-- [ Main Content ] end -->
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade
+               <br/>to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="~/flat-able-admin/assets/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="~/flat-able-admin/assets/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="~/flat-able-admin/assets/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="~/flat-able-admin/assets/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="~/flat-able-admin/assets/images/browser/ie.png" alt="">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Required Js -->
+    <script src="~/Templates/flat-able-admin/dist/assets/js/vendor-all.min.js"></script>
+    <script src="~/Templates/flat-able-admin/dist/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="~/Templates/flat-able-admin/dist/assets/js/pcoded.min.js"></script>
+    <script src="~/Templates/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/Templates/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- jQuery Scrollbar -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
-    <!-- Chart JS -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/chart.js/chart.min.js"></script>
-
-    <!-- jQuery Sparkline -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Chart Circle -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/chart-circle/circles.min.js"></script>
-
-    <!-- Datatables -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/datatables/datatables.min.js"></script>
-
-    <!-- Bootstrap Notify -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-
-    <!-- jQuery Vector Maps -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/jsvectormap/world.js"></script>
-
-    <!-- Sweet Alert -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-
-    <!-- Kaiadmin JS -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/kaiadmin.min.js"></script>
-
-    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/setting-demo.js"></script>
-    <script src="/Templates/kaiadmin-lite-1.2.0/assets/js/demo.js"></script>
-    <script>
-        $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-            type: "line",
-            height: "70",
-            width: "100%",
-            lineWidth: "2",
-            lineColor: "#177dff",
-            fillColor: "rgba(23, 125, 255, 0.14)",
-        });
-
-        $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-            type: "line",
-            height: "70",
-            width: "100%",
-            lineWidth: "2",
-            lineColor: "#f3545d",
-            fillColor: "rgba(243, 84, 93, .14)",
-        });
-
-        $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
-            type: "line",
-            height: "70",
-            width: "100%",
-            lineWidth: "2",
-            lineColor: "#ffa534",
-            fillColor: "rgba(255, 165, 52, .14)",
-        });
-    </script>
 </body>
-</html>
-

@@ -1,4 +1,6 @@
 ﻿using BabyCare.Dtos.InstructorDto;
+using BabyCare.Dtos.ProductDto;
+using BabyCare.Services.IImageServices;
 using BabyCare.Services.InstructorServices;
 using Microsoft.AspNetCore.Mvc;
 using System.Drawing;
@@ -6,7 +8,7 @@ using System.Drawing;
 namespace BabyCare.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class InstructorController(IInstructorService _ınstructorService) : Controller
+    public class InstructorController(IInstructorService _ınstructorService, IImageService _imageService) : Controller
     {
         public async Task<IActionResult> Index()
         {
@@ -22,6 +24,20 @@ namespace BabyCare.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateInstructor(CreateInstructorDto createInstructorDto)
         {
+            if (createInstructorDto.ImageFile != null)
+            {
+                try
+                {
+                    createInstructorDto.ImageUrl = await _imageService.SaveImage(createInstructorDto.ImageFile);
+                }
+                catch (Exception exc)
+                {
+
+                    ModelState.AddModelError(string.Empty, exc.Message);
+                    return View(createInstructorDto);
+                }
+
+            }
             await _ınstructorService.CreateInstructorAsync(createInstructorDto);
             return RedirectToAction("Index");
         }
@@ -34,6 +50,7 @@ namespace BabyCare.Areas.Admin.Controllers
 
         public async Task<IActionResult> UpdateInstructor(string id)
         {
+
             var value= await _ınstructorService.GetInstructorAsync(id);
             return View(value);
         }
@@ -41,6 +58,20 @@ namespace BabyCare.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateInstructor(UpdateInstructorDto updateInstructorDto)
         {
+            if (updateInstructorDto.ImageFile != null)
+            {
+                try
+                {
+                    updateInstructorDto.ImageUrl = await _imageService.SaveImage(updateInstructorDto.ImageFile);
+                }
+                catch (Exception exc)
+                {
+
+                    ModelState.AddModelError(string.Empty, exc.Message);
+                    return View(updateInstructorDto);
+                }
+
+            }
             await _ınstructorService.UpdateInstructorAsync(updateInstructorDto);
             return RedirectToAction("Index");
         }

@@ -1,0 +1,50 @@
+﻿@model CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h3 class="text-center mb-4">Yeni Ürün Ekle</h3>
+
+<form method="post" enctype="multipart/form-data">
+    <!-- Ürün Görseli -->
+    <div class="form-group">
+        <label for="ImageFile">Ürün Görseli</label>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="ImageFile" name="ImageFile" />
+            <label class="custom-file-label" for="ImageFile">Bir görsel seçin...</label>
+        </div>
+        <small class="form-text text-muted">Yalnızca .jpg, .jpeg, .png formatlarında dosya yükleyebilirsiniz.</small>
+    </div>
+
+    <!-- Ürün Adı -->
+    <div class="form-group">
+        <label for="Title">Ürün Adı</label>
+        <input type="text" id="Title" asp-for="Title" class="form-control" placeholder="Ürün Adı Girin" />
+    </div>
+
+    <!-- Ürün Açıklaması -->
+    <div class="form-group">
+        <label for="Description">Ürün Açıklaması</label>
+        <textarea id="Description" asp-for="Description" class="form-control" rows="4" placeholder="Ürün Açıklamasını Girin"></textarea>
+    </div>
+
+    <!-- Ürün Fiyatı -->
+    <div class="form-group">
+        <label for="Price">Ürün Fiyatı</label>
+        <input type="number" id="Price" asp-for="Price" class="form-control" placeholder="Fiyatı Girin" />
+    </div>
+
+    <!-- Eğitmen -->
+    <div class="form-group">
+        <label for="InstructorName">Eğitmen</label>
+        <select asp-for="InstructorName" asp-items="@ViewBag.instructors" class="form-control">
+            <option disabled selected>Eğitmen Seçiniz</option>
+        </select>
+    </div>
+
+    <!-- Kaydet Butonu -->
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Kaydet</button>
+    </div>
+</form>

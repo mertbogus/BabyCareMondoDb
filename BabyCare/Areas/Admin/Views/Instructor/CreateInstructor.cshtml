@@ -4,19 +4,37 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
-<h3>Yeni Eğitmen Ekle</h3>
-<form method="post" class="mt-2">
-    <label>Profil Resmi</label>
-    <input type="text" asp-for="ImageUrl" class="form-control" />
+<h3 class="text-center mb-4">Yeni Ürün Ekle</h3>
 
-    <label>Ad</label>
-    <input type="text" asp-for="FirstName" class="form-control" />
+<form method="post" enctype="multipart/form-data">
+    <!-- Ürün Görseli -->
+    <div class="form-group">
+        <label for="ImageFile">Ürün Görseli</label>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="ImageFile" name="ImageFile" />
+            <label class="custom-file-label" for="ImageFile">Bir görsel seçin...</label>
+        </div>
+        <small class="form-text text-muted">Yalnızca .jpg, .jpeg, .png formatlarında dosya yükleyebilirsiniz.</small>
+    </div>
 
-    <label>Soyad</label>
-    <input type="text" asp-for="LastName" class="form-control" />
+    <div class="form-group">
+        <label for="Title">Eğitmen Adı</label>
+        <input type="text" id="Title" asp-for="FirstName" class="form-control" placeholder="Eğitmen Adı Girin" />
+    </div>
+   
+    <div class="form-group">
+        <label for="Description">Ürün Eğitmen Soyadı</label>
+        <textarea id="Description" asp-for="LastName" class="form-control" rows="4" placeholder="Eğitmenin Soyadını Giriniz"></textarea>
+    </div>
 
-    <label>Unvan</label>
-    <input type="text" asp-for="Title" class="form-control" />
+ 
+    <div class="form-group">
+        <label for="Price">Eğitmen Ünvanı</label>
+        <input type="number" id="Price" asp-for="Title" class="form-control" placeholder="Eğitmenin Pozisiyonunu Girin" />
+    </div>
 
-    <button class="btn btn-primary">Kaydet</button>
+    <!-- Kaydet Butonu -->
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Kaydet</button>
+    </div>
 </form>

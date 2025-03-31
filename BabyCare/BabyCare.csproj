@@ -18,4 +18,15 @@
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Templates\coreui-free-bootstrap-admin-template-main\.github\CONTRIBUTING.md" />
+    <None Include="wwwroot\Templates\coreui-free-bootstrap-admin-template-main\.github\FUNDING.yml" />
+    <None Include="wwwroot\Templates\coreui-free-bootstrap-admin-template-main\.github\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\Templates\coreui-free-bootstrap-admin-template-main\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="wwwroot\Templates\coreui-free-bootstrap-admin-template-main\.github\ISSUE_TEMPLATE\config.yml" />
+    <None Include="wwwroot\Templates\coreui-free-bootstrap-admin-template-main\.github\ISSUE_TEMPLATE\feature_request.md" />
+    <None Include="wwwroot\Templates\coreui-free-bootstrap-admin-template-main\.github\stale.yml" />
+    <None Include="wwwroot\Templates\coreui-free-bootstrap-admin-template-main\.github\SUPPORT.md" />
+  </ItemGroup>
+
 </Project>

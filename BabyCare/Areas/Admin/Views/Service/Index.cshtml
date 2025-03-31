@@ -1,0 +1,55 @@
+﻿@model List<ResultServiceDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Hizmetler</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Hizmet Başlığı</th>
+        <th>Hizmet Açıklaması</th>
+        <th>İcon</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.ServiceTitle</td>
+            <td>
+                <!-- Kısa açıklama gösterimi -->
+                <p class="short-description">
+                    @item.ServiceDesc
+                </p>
+            </td>
+            <td><i class="@item.Icon"></i></td>
+            <td>
+                <a href="/Admin/Service/DeleteService/@item.ServiceId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Service/UpdateService/@item.ServiceId" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Admin/Service/CreateService" class="btn btn-primary">Yeni Servis Ekleme</a>
+
+<!-- Custom CSS to limit description length for all table rows -->
+<style>
+    .table td, .table th {
+        vertical-align: middle; /* Center align text in cells */
+    }
+
+    .short-description {
+        white-space: nowrap; /* Prevent wrapping of text */
+        overflow: hidden; /* Hide overflowed text */
+        text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+        max-width: 200px; /* Limit the width of the description (adjust as necessary) */
+    }
+</style>
+

@@ -1,16 +1,22 @@
-﻿
+﻿@model List<ResultHeroDto>
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-<div class="container-fluid py-5 hero-header wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-7 col-md-12">
-                <h1 class="mb-3 text-primary">We Care Your Baby</h1>
-                <h1 class="mb-5 display-1 text-white">The Best Play Area For Your Kids</h1>
-                <a href="" class="btn btn-primary px-4 py-3 px-md-5  me-4 btn-border-radius">Get Started</a>
-                <a href="" class="btn btn-primary px-4 py-3 px-md-5 btn-border-radius">Learn More</a>
+@foreach (var item in Model)
+{
+    
+
+<div class="container-fluid position-relative p-0">
+        <img src="@item.ImageUrl" class="img-fluid w-100" alt="Hero Background">
+    <div class="container position-absolute top-50 start-50 translate-middle text-center text-white">
+            <div class="row g-5">
+                <div class="col-lg-7 col-md-12">
+                    <h1 class="mb-3 text-primary">@item.HeroTitle</h1>
+                    <h1 class="mb-5 display-1 text-white">@item.HeroDesc</h1>
+                    <a href="" class="btn btn-primary px-4 py-3 px-md-5 me-4 btn-border-radius">Başlayın</a>
+                    <a href="" class="btn btn-primary px-4 py-3 px-md-5 btn-border-radius">Daha Fazla Bilgi Edinin</a>
+                </div>
             </div>
-        </div>
     </div>
 </div>
+    }

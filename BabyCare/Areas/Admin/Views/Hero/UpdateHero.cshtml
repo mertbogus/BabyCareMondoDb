@@ -1,0 +1,53 @@
+﻿@model UpdateHeroDto
+@{
+    ViewData["Title"] = "UpdateHero";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h3 class="text-center mb-4">Yeni Hero Güncelleme </h3>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="HeroId" />
+    <label for="ImageFile">Ürün Görseli</label>
+
+    <!-- Mevcut Yüklenmiş Resmi Göster -->
+    @if (Model != null && !string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <div class="mb-3">
+            <img src="@Model.ImageUrl" alt="Mevcut Resim" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;" />
+        </div>
+        <div class="alert alert-info">
+            <strong>Mevcut Resim:</strong> Mevcut ürün görseli yukarıda gösterilmektedir. Yeni bir görsel yüklemek isterseniz, aşağıdan seçebilirsiniz.
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            <strong>Uyarı:</strong> Bu ürün için herhangi bir görsel yüklenmemiş.
+        </div>
+    }
+
+    <!-- Yeni Resim Yükleme -->
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="ImageFile" name="ImageFile" />
+        <label class="custom-file-label" for="ImageFile">Bir görsel seçin...</label>
+    </div>
+    <small class="form-text text-muted">Yalnızca .jpg, .jpeg, .png formatlarında dosya yükleyebilirsiniz.</small>
+    </div>
+
+    <div class="form-group">
+        <label for="Title">Başlık</label>
+        <input type="text" id="Title" asp-for="HeroTitle" class="form-control" placeholder="Bir Başlık Giriniz." />
+    </div>
+
+
+    <div class="form-group">
+        <label for="Description">Site Açıklaması</label>
+        <textarea id="Description" asp-for="HeroDesc" class="form-control" rows="4" placeholder="Açıklama Giriniz"></textarea>
+    </div>
+    <!-- Kaydet Butonu -->
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Kaydet</button>
+    </div>
+</form>
+

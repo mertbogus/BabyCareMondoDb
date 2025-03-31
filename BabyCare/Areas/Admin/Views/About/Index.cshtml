@@ -1,0 +1,54 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Hakkımda</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Youtube Video Url</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.AboutTitle</td>
+            <td>
+                <!-- Kısa açıklama gösterimi -->
+                <p class="short-description">
+                    @item.AboutDesc
+                </p>
+            </td>
+            <td>@item.AboutYoutubeUrl</td>
+            <td>
+                <a href="/Admin/About/DeleteAbout/@item.AboutId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/About/UpdateAbout/@item.AboutId" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Admin/About/CreateAbout" class="btn btn-primary">Yeni Hakkımda Alanı Ekleme</a>
+
+<!-- Custom CSS to limit description length for all table rows -->
+<style>
+    .table td, .table th {
+        vertical-align: middle; /* Center align text in cells */
+    }
+
+    .short-description {
+        white-space: nowrap; /* Prevent wrapping of text */
+        overflow: hidden; /* Hide overflowed text */
+        text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+        max-width: 200px; /* Limit the width of the description (adjust as necessary) */
+    }
+</style>

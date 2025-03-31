@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BabyCare.Services.ProductServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BabyCare.ViewComponents.UILayout
 {
-    public class _UILayoutProgramsComponent:ViewComponent
+    public class _UILayoutProgramsComponent(IProductService _productService):ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var products = await _productService.GetAllUI();
+            return View(products);
         }
     }
 }

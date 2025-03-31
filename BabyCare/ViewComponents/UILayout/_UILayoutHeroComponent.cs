@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BabyCare.Services.IHeroServices;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BabyCare.ViewComponents.UILayout
 {
-    public class _UILayoutHeroComponent : ViewComponent
+    public class _UILayoutHeroComponent(IHeroService _heroService) : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var values = await _heroService.GetAllHeroAsync();
+            return View(values);
         }
     }
 }

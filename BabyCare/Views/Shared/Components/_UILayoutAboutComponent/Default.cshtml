@@ -1,36 +1,36 @@
-﻿
+﻿@model ResultUIAboutDto
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 <div class="container-fluid py-5 about bg-light">
-    <div class="container py-5">
+    <div class="container py-5">    
         <div class="row g-5 align-items-center">
             <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
                 <div class="video border">
-                    <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                    <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="@Model.AboutYoutubeUrl" data-bs-target="#videoModal">
                         <span></span>
                     </button>
                 </div>
             </div>
             <div class="col-lg-7 wow fadeIn" data-wow-delay="0.3s">
-                <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">About Us</h4>
-                <h1 class="text-dark mb-4 display-5">We Learn Smart Way To Build Bright Futute For Your Children</h1>
+                <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Hakkımızda</h4>
+                <h1 class="text-dark mb-4 display-5">@Model.AboutTitle</h1>
                 <p class="text-dark mb-4">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    @Model.AboutDesc
                 </p>
                 <div class="row mb-4">
                     <div class="col-lg-6">
-                        <h6 class="mb-3"><i class="fas fa-check-circle me-2"></i>Sport Activites</h6>
-                        <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-primary"></i>Outdoor Games</h6>
-                        <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-secondary"></i>Nutritious Foods</h6>
+                        <h6 class="mb-3"><i class="fas fa-check-circle me-2"></i>Sport Aktiveleri</h6>
+                        <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-primary"></i>Dışarıda oyunlar</h6>
+                        <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-secondary"></i>Besleyici Gıdalar</h6>
                     </div>
                     <div class="col-lg-6">
-                        <h6 class="mb-3"><i class="fas fa-check-circle me-2"></i>Highly Secured</h6>
-                        <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-primary"></i>Friendly Environment</h6>
-                        <h6><i class="fas fa-check-circle me-2 text-secondary"></i>Qualified Teacher</h6>
+                        <h6 class="mb-3"><i class="fas fa-check-circle me-2"></i>Yüksek Güvenlik</h6>
+                        <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-primary"></i>Dostça Çevret</h6>
+                        <h6><i class="fas fa-check-circle me-2 text-secondary"></i>Kaliteli Öğretmenler</h6>
                     </div>
                 </div>
-                <a href="" class="btn btn-primary px-5 py-3 btn-border-radius">More Details</a>
+                <a href="" class="btn btn-primary px-5 py-3 btn-border-radius">Detayları Gör</a>
             </div>
         </div>
     </div>

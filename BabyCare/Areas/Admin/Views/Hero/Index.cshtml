@@ -1,0 +1,38 @@
+﻿@model List<ResultHeroDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Ürünler</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Arka Plan Resmi</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.ImageUrl" style="height:75px;width:75px" />  </td>
+            <td>@item.HeroTitle</td>
+            <td>@item.HeroDesc</td>
+            <td>
+                <a href="/Admin/Hero/DeleteHero/@item.HeroId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Hero/UpdateHero/@item.HeroId" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+
+
+    }
+
+</table>
+<a href="/Admin/Hero/Createero" class="btn btn-primary">Yeni Hero Alanı Ekleme</a>
+

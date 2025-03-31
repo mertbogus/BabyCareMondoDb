@@ -1,0 +1,72 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<h3 class="text-center mb-4">Ürün Güncelleme</h3>
+
+<form method="post" enctype="multipart/form-data">
+    <!-- Ürün Görseli -->
+    <div class="form-group">
+        <label for="ImageFile">Ürün Görseli</label>
+
+        <!-- Mevcut Yüklenmiş Resmi Göster -->
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <div class="mb-3">
+                <img src="@Model.ImageUrl" alt="Mevcut Resim" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;" />
+            </div>
+            <div class="alert alert-info">
+                <strong>Mevcut Resim:</strong> Mevcut ürün görseli yukarıda gösterilmektedir. Yeni bir görsel yüklemek isterseniz, aşağıdan seçebilirsiniz.
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                <strong>Uyarı:</strong> Bu ürün için herhangi bir görsel yüklenmemiş.
+            </div>
+        }
+
+        <!-- Yeni Resim Yükleme -->
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="ImageFile" name="ImageFile" />
+            <label class="custom-file-label" for="ImageFile">Bir görsel seçin...</label>
+        </div>
+        <small class="form-text text-muted">Yalnızca .jpg, .jpeg, .png formatlarında dosya yükleyebilirsiniz.</small>
+    </div>
+
+    <!-- Ürün Adı -->
+    <div class="form-group">
+        <label for="Title">Ürün Adı</label>
+        <input type="text" id="Title" asp-for="Title" class="form-control" placeholder="Ürün Adı Girin" value="@Model.Title" />
+    </div>
+
+    <!-- Ürün Açıklaması -->
+    <div class="form-group">
+        <label for="Description">Ürün Açıklaması</label>
+        <textarea id="Description" asp-for="Description" class="form-control" rows="4" placeholder="Ürün Açıklamasını Girin">@Model.Description</textarea>
+    </div>
+
+    <!-- Ürün Fiyatı -->
+    <div class="form-group">
+        <label for="Price">Ürün Fiyatı</label>
+        <input type="number" id="Price" asp-for="Price" class="form-control" placeholder="Fiyatı Girin" value="@Model.Price" />
+    </div>
+
+    <!-- Eğitmen -->
+    <div class="form-group">
+        <label for="InstructorName">Eğitmen</label>
+        <select asp-for="InstructorName" asp-items="@ViewBag.instructors" class="form-control">
+            <option disabled selected>Eğitmen Seçiniz</option>
+        </select>
+    </div>
+
+    <!-- Kaydet Butonu -->
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Güncelle</button>
+    </div>
+</form>
+

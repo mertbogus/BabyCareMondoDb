@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BabyCare.Services.AboutServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BabyCare.ViewComponents.UILayout
 {
-    public class _UILayoutAboutComponent : ViewComponent
+    public class _UILayoutAboutComponent(IAboutService _aboutService) : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var values = await _aboutService.GetFirstAboutAsync();
+            return View(values);
         }
     }
 }

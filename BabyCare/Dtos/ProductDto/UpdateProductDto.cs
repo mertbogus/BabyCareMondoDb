@@ -10,6 +10,8 @@
 
         public string ImageUrl { get; set; }
 
+        public IFormFile? ImageFile { get; set; }
+
         public string InstructorName { get; set; }
     }
 }

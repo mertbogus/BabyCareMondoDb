@@ -1,0 +1,57 @@
+﻿@model List<ResultEventDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+<h3>Ürünler</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Görsel</th>
+        <th>Etkinlik Başlığı</th>
+        <th>Etkinlik Açıklaması</th>
+        <th>Tarih</th>
+        <th>Şehir</th>
+        <th>Saat</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.ImageUrl" style="height:75px;width:75px" />  </td>
+            <td>@item.EventTitle</td>
+            <td><p class="short-description">@item.EventDesc<p /></td>
+            <td>@item.EventDate.ToString("dd MMMM")</td>
+            <td>@item.EventCity</td>
+            <td>@item.EventTime</td>
+            <td>
+                <a href="/Admin/Event/DeleteEvent/@item.EventId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Event/UpdateEvent/@item.EventId" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+
+
+    }
+
+</table>
+<a href="/Admin/Event/CreateEvent" class="btn btn-primary">Yeni Etkinlik Ekle</a>
+
+<style>
+    .table td, .table th {
+        vertical-align: middle; /* Center align text in cells */
+    }
+
+    .short-description {
+        white-space: nowrap; /* Prevent wrapping of text */
+        overflow: hidden; /* Hide overflowed text */
+        text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+        max-width: 200px; /* Limit the width of the description (adjust as necessary) */
+    }
+</style>

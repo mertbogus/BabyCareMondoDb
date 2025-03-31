@@ -1,5 +1,11 @@
 using BabyCare.DataAccess.Settings;
+using BabyCare.Services.AboutServices;
+using BabyCare.Services.EventServices;
+using BabyCare.Services.IHeroServices;
+using BabyCare.Services.IImageServices;
 using BabyCare.Services.InstructorServices;
+using BabyCare.Services.ProductServices;
+using BabyCare.Services.ServiceServices;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 
@@ -16,6 +22,12 @@ builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 });
 
 builder.Services.AddScoped<IInstructorService, InstructorService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddScoped<IHeroService, HeroService>();
+builder.Services.AddScoped<IAboutService, AboutService>();
+builder.Services.AddScoped<IServiceServices, ServiceServices>();
+builder.Services.AddScoped<IEventService, EventService>();
 
 builder.Services.AddControllersWithViews();
 

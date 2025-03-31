@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BabyCare.Services.EventServices;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BabyCare.ViewComponents.UILayout
 {
-    public class _UILayoutEventsComponent:ViewComponent
+    public class _UILayoutEventsComponent(IEventService _eventService):ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            var values = await _eventService.GetEventUIAsync();
+            return View(values);
         }
     }
 }

@@ -6,6 +6,8 @@ namespace BabyCare.Services.ProductServices
     {
         Task<List<ResultProductDto>> GetAll();
 
+        Task<List<ResultUIProductDto>> GetAllUI();
+
         Task<UpdateProductDto> GetById(string id);
 
         Task CreateAsync(CreateProductDto createProductDto);

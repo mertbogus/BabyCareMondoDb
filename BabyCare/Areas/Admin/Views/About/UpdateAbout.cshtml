@@ -1,0 +1,30 @@
+﻿@model UpdateAboutDto
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h3 class="text-center mb-4">Yeni Hakkımda  Ekle </h3>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Title">Başlık</label>
+        <input type="text" id="Title" asp-for="AboutTitle" class="form-control" placeholder="Bir Başlık Giriniz." />
+    </div>
+
+
+    <div class="form-group">
+        <label for="Description">Hakkımda Açıklaması</label>
+        <textarea id="Description" asp-for="AboutDesc" class="form-control" rows="4" placeholder="Açıklama Giriniz"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Youtube Video URL </label>
+        <textarea id="Description" asp-for="AboutYoutubeUrl" class="form-control" rows="4" placeholder="Video Url Giriniz."></textarea>
+    </div>
+    <!-- Kaydet Butonu -->
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Kaydet</button>
+    </div>
+</form>
+

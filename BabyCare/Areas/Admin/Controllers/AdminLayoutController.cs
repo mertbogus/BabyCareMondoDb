@@ -2,6 +2,7 @@
 
 namespace BabyCare.Areas.Admin.Controllers
 {
+   
     public class AdminLayoutController : Controller
     {
         public IActionResult Index()

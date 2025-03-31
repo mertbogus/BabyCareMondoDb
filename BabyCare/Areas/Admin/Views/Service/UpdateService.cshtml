@@ -1,0 +1,30 @@
+﻿@model UpdateServiceDto
+@{
+    ViewData["Title"] = "UpdateService";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h3 class="text-center mb-4">Servisi Güncelle </h3>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="ServiceId" />
+    <div class="form-group">
+        <label for="ServiceTitle">Servis Başlığı</label>
+        <input type="text" id="ServiceTitle" asp-for="ServiceTitle" class="form-control" placeholder="Servis Başlığı" />
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Servis Açıklaması </label>
+        <textarea id="Description" asp-for="ServiceDesc" class="form-control" rows="3" placeholder="Servis İçin Açıklama Giriniz."></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Icon">İcon</label>
+        <input type="text" id="Icon" asp-for="Icon" class="form-control" placeholder="fas fa-sort-alpha-down fa-6x text-primary" />
+    </div>
+    <!-- Kaydet Butonu -->
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Güncelle</button>
+    </div>
+</form>
+
+

@@ -37,6 +37,12 @@ namespace BabyCare.Services.ProductServices
             return _mapper.Map<List<ResultProductDto>>(values);
         }
 
+        public async Task<List<ResultUIProductDto>> GetAllUI()
+        {
+            var values = await _productCollection.AsQueryable().ToListAsync();
+            return _mapper.Map<List<ResultUIProductDto>>(values);
+        }
+
         public async Task<UpdateProductDto> GetById(string id)
         {
             var product = await _productCollection.Find(x => x.ProductId == id).FirstOrDefaultAsync();
