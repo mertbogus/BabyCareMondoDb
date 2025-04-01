@@ -1,0 +1,67 @@
+﻿@model List<ResultContactDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>İletişim Bilgileri</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Adres</th>
+        <th>Telefon Numarası</th>
+        <th>Mail Adresi</th>
+        <th>Abone Ol Metni</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Address</td>
+            <td>@item.Mail</td>
+            <td>@item.TelephoneNumber</td>
+            <td>
+                <!-- Kısa açıklama gösterimi -->
+                <p class="short-description" title="@item.SubsectionDesc">
+                    @item.SubsectionDesc
+                </p>
+            </td>
+            <td>
+                <a href="/Admin/Contact/DeleteContact/@item.ContactId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Contact/UpdateContact/@item.ContactId" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Admin/Contact/CreateContact" class="btn btn-primary">Yeni İletişim Bilgisi Ekleme</a>
+
+<!-- Custom CSS to limit description length for all table rows -->
+<style>
+    .table td, .table th {
+        vertical-align: middle; /* Center align text in cells */
+    }
+
+    /* Short description CSS */
+    .short-description {
+        white-space: nowrap; /* Prevent wrapping of text */
+        overflow: hidden; /* Hide overflowed text */
+        text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+        max-width: 200px; /* Limit the width of the description (adjust as necessary) */
+    }
+
+        /* On hover, show the full description */
+        .short-description:hover {
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Allow the text to overflow */
+            text-overflow: clip; /* Remove ellipsis */
+            background-color: #f8f9fa; /* Optional: Add background color to highlight the text */
+            z-index: 10; /* Ensure the text is above other elements */
+            position: relative;
+        }
+</style>

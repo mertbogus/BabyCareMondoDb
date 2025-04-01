@@ -1,0 +1,81 @@
+﻿@model UpdateEventDto
+@{
+    ViewData["Title"] = "UpdateEvent";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h3 class="text-center mb-4">Yeni Etkinlik Ekle</h3>
+
+<form method="post" enctype="multipart/form-data">
+    @if (ViewBag.Errors != null && ViewBag.Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach (var error in ViewBag.Errors)
+                {
+                    <li>@error</li>
+                }
+            </ul>
+        </div>
+    }
+  
+    <!-- Mevcut Yüklenmiş Resmi Göster -->
+    @if (Model != null && !string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <div class="mb-3">
+            <img src="@Model.ImageUrl" alt="Mevcut Resim" class="img-fluid rounded" style="max-height: 200px; object-fit: cover;" />
+        </div>
+        <div class="alert alert-info">
+            <strong>Mevcut Resim:</strong> Mevcut ürün görseli yukarıda gösterilmektedir. Yeni bir görsel yüklemek isterseniz, aşağıdan seçebilirsiniz.
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            <strong>Uyarı:</strong> Bu ürün için herhangi bir görsel yüklenmemiş.
+        </div>
+    }
+
+
+    <div class="form-group">
+        <label for="ImageFile">Ürün Görseli</label>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="ImageFile" name="ImageFile" />
+            <label class="custom-file-label" for="ImageFile">Bir görsel seçin...</label>
+        </div>
+        <small class="form-text text-muted">Yalnızca .jpg, .jpeg, .png formatlarında dosya yükleyebilirsiniz.</small>
+    </div>
+
+
+    <div class="form-group">
+        <label for="Title">Etkinlik Adı</label>
+        <input type="text" asp-for="EventTitle" class="form-control" placeholder="Etkinlik Adı Giriniz." />
+    </div>
+
+
+    <div class="form-group">
+        <label for="Description">Etkinlik Açıklaması</label>
+        <textarea asp-for="EventDesc" class="form-control" rows="3" placeholder="Etkinlik Açıklamasını Girin"></textarea>
+    </div>
+
+
+    <div class="form-group">
+        <label for="EventDate">Etkinlik Tarihi</label>
+        <input type="date" asp-for="EventDate" class="form-control" placeholder="Tarih Seçiniz." />
+    </div>
+
+    <div class="form-group">
+        <label for="EventCity">Şehir Giriniz</label>
+        <input type="text" asp-for="EventCity" class="form-control" placeholder="Şehir İsmi Giriniz." />
+    </div>
+    <div class="form-group">
+        <label for="EventCity">Etkinlik Saati</label>
+        <input type="text" asp-for="EventTime" class="form-control" placeholder="Etkinlik Saatini Giriniz. Örnek: 15:00" />
+    </div>
+
+    <!-- Kaydet Butonu -->
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary btn-lg">Kaydet</button>
+    </div>
+</form>
+

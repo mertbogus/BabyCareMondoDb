@@ -37,6 +37,7 @@ namespace BabyCare.Services.InstructorServices
             return _mapper.Map<List<ResultInstructorDto>>(values);
         }
 
+  
         public async Task<UpdateInstructorDto> GetInstructorAsync(string id)
         {
             var instructor = await _instractorCollection.Find(x => x.InstructorId == id).FirstOrDefaultAsync();
@@ -48,6 +49,12 @@ namespace BabyCare.Services.InstructorServices
         {
             var instructor=_mapper.Map<Instructor>(updateInstructorDto);
             await _instractorCollection.FindOneAndReplaceAsync(X => X.InstructorId == instructor.InstructorId, instructor);
+        }
+
+        async Task<List<ResultUIInstructorDto>> IInstructorService.GetAllUIInstructorAsync()
+        {
+            var values = await _instractorCollection.AsQueryable().ToListAsync();
+            return _mapper.Map<List<ResultUIInstructorDto>>(values);
         }
     }
 }

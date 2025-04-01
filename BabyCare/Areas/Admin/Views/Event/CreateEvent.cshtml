@@ -7,6 +7,17 @@
 <h3 class="text-center mb-4">Yeni Etkinlik Ekle</h3>
 
 <form method="post" enctype="multipart/form-data">
+    @if (ViewBag.Errors != null && ViewBag.Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach (var error in ViewBag.Errors)
+                {
+                    <li>@error</li>
+                }
+            </ul>
+        </div>
+    }
     <!-- Ürün Görseli -->
     <div class="form-group">
         <label for="ImageFile">Ürün Görseli</label>

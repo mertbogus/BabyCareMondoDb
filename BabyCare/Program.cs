@@ -1,17 +1,23 @@
 using BabyCare.DataAccess.Settings;
 using BabyCare.Services.AboutServices;
+using BabyCare.Services.ContactServices;
 using BabyCare.Services.EventServices;
 using BabyCare.Services.IHeroServices;
 using BabyCare.Services.IImageServices;
 using BabyCare.Services.InstructorServices;
 using BabyCare.Services.ProductServices;
 using BabyCare.Services.ServiceServices;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters().
+    AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
@@ -28,6 +34,7 @@ builder.Services.AddScoped<IHeroService, HeroService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IServiceServices, ServiceServices>();
 builder.Services.AddScoped<IEventService, EventService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 builder.Services.AddControllersWithViews();
 

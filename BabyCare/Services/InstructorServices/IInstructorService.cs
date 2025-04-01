@@ -12,5 +12,7 @@ namespace BabyCare.Services.InstructorServices
         Task UpdateInstructorAsync(UpdateInstructorDto updateInstructorDto);
 
         Task DeleteInstructorAsync(string id);
+
+        Task<List<ResultUIInstructorDto>> GetAllUIInstructorAsync();
     }
 }

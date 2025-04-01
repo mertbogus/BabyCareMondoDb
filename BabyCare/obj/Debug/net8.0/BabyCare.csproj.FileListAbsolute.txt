@@ -237,3 +237,7 @@ C:\Users\MERT\source\repos\BabyCare\BabyCare\obj\Debug\net8.0\refint\BabyCare.dl
 C:\Users\MERT\source\repos\BabyCare\BabyCare\obj\Debug\net8.0\BabyCare.pdb
 C:\Users\MERT\source\repos\BabyCare\BabyCare\obj\Debug\net8.0\BabyCare.genruntimeconfig.cache
 C:\Users\MERT\source\repos\BabyCare\BabyCare\obj\Debug\net8.0\ref\BabyCare.dll
+C:\Users\MERT\source\repos\BabyCare\BabyCare\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\MERT\source\repos\BabyCare\BabyCare\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\MERT\source\repos\BabyCare\BabyCare\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\MERT\source\repos\BabyCare\BabyCare\obj\Debug\net8.0\BabyCare.MvcApplicationPartsAssemblyInfo.cs

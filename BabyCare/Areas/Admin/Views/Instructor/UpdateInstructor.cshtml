@@ -6,7 +6,19 @@
 <h3 class="text-center mb-4">Ürün Güncelleme</h3>
 
 <form method="post" enctype="multipart/form-data">
-    <!-- Ürün Görseli -->
+   
+    @if (ViewBag.Errors != null && ViewBag.Errors.Count > 0)
+    {
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach (var error in ViewBag.Errors)
+                {
+                    <li>@error</li>
+                }
+            </ul>
+        </div>
+    }
+
     <div class="form-group">
         <input type="hidden" asp-for="InstructorId"/>
         <label for="ImageFile">Ürün Görseli</label>
@@ -36,19 +48,34 @@
         <small class="form-text text-muted">Yalnızca .jpg, .jpeg, .png formatlarında dosya yükleyebilirsiniz.</small>
     </div>
     <div class="form-group">
-        <label for="Title">Eğitmen Adı</label>
+        <label for="FirstName">Eğitmen Adı</label>
         <input type="text"  asp-for="FirstName" class="form-control" placeholder="Eğitmen Adı Girin" />
     </div>
 
     <div class="form-group">
-        <label for="Description">Ürün Eğitmen Soyadı</label>
-        <textarea id="Description" asp-for="LastName" class="form-control" rows="4" placeholder="Eğitmenin Soyadını Giriniz"></textarea>
+        <label for="LastName">Ürün Eğitmen Soyadı</label>
+        <textarea  asp-for="LastName" class="form-control" rows="4" placeholder="Eğitmenin Soyadını Giriniz"></textarea>
     </div>
 
 
     <div class="form-group">
-        <label for="Price">Eğitmen Ünvanı</label>
+        <label for="Title">Eğitmen Ünvanı</label>
         <input type="text"  asp-for="Title" class="form-control" placeholder="Eğitmenin Pozisiyonunu Girin" />
+    </div>
+
+    <div class="form-group">
+        <label for="TwitterUrl">Eğitmen Twitter URL</label>
+        <input type="text" asp-for="TwitterUrl" class="form-control" placeholder="Eğitmenin Twitter Hesabı Linkini Giriniz." />
+    </div>
+
+    <div class="form-group">
+        <label for="LinkledinUrl">Eğitmen Linkledin URL</label>
+        <input type="text" asp-for="LinkledinUrl" class="form-control" placeholder="Eğitmenin Linkledin Hesabı Linkini Giriniz." />
+    </div>
+
+    <div class="form-group">
+        <label for="InstagramUrl">Eğitmen Instagram URL</label>
+        <input type="text" asp-for="InstagramUrl" class="form-control" placeholder="Eğitmenin Linkledin Hesabı Linkini Giriniz." />
     </div>
 
     <!-- Kaydet Butonu -->

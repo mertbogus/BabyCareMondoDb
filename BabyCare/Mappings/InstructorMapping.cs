@@ -12,6 +12,7 @@ namespace BabyCare.Mappings
             CreateMap<ResultInstructorDto, Instructor>().ReverseMap();
             CreateMap<UpdateInstructorDto, Instructor>().ReverseMap();
             CreateMap<CreateInstructorDto, Instructor>().ReverseMap();
+            CreateMap<ResultUIInstructorDto, Instructor>().ReverseMap();
 
 
         }
