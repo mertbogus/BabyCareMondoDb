@@ -14,6 +14,6 @@ namespace BabyCare.Services.ServiceServices
 
         Task DeleteServiceAsync(string id);
 
-        Task<List<ResultUIServiceDto>> GetServiceUItAsync();
+        Task<List<ResultUIServiceDto>> GetAllUIServiceAsync();
     }
 }

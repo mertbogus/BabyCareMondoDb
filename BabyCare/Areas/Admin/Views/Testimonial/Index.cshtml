@@ -1,0 +1,53 @@
+﻿@model List<ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Yorumlar</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Yorum Yapanın Resmi</th>
+        <th>Ad Soyad</th>
+        <th>Açıklama</th>
+        <th>Puan</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.CommenterImage" style="height:75px;width:75px" />  </td>
+            <td>@item.CommenterFullName</td>
+            <td><p class="short-description">@item.Description<p /></td>
+            <td>@item.Rating</td>
+            <td>
+                <a href="/Admin/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Sil</a>
+                <a href="/Admin/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-info">Güncelle</a>
+            </td>
+        </tr>
+
+
+    }
+
+</table>
+<a href="/Admin/Testimonial/CreateTestimonial" class="btn btn-primary">Yeni Yorum Ekle </a>
+
+<style>
+    .table td, .table th {
+        vertical-align: middle; /* Center align text in cells */
+    }
+
+    .short-description {
+        white-space: nowrap; /* Prevent wrapping of text */
+        overflow: hidden; /* Hide overflowed text */
+        text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+        max-width: 200px; /* Limit the width of the description (adjust as necessary) */
+    }
+</style>
+

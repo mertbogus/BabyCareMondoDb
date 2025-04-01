@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\MERT\\source\\repos\\BabyCare\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{421A88CA-ADBF-4A4E-B6E1-0B97118AC0BF}|BabyCare\\BabyCare.csproj|c:\\users\\mert\\source\\repos\\babycare\\babycare\\areas\\admin\\views\\shared\\components\\_adminlayoutsidebarcomponent\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{421A88CA-ADBF-4A4E-B6E1-0B97118AC0BF}|BabyCare\\BabyCare.csproj|solutionrelative:babycare\\areas\\admin\\views\\shared\\components\\_adminlayoutsidebarcomponent\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{421A88CA-ADBF-4A4E-B6E1-0B97118AC0BF}|BabyCare\\BabyCare.csproj|c:\\users\\mert\\source\\repos\\babycare\\babycare\\areas\\admin\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{421A88CA-ADBF-4A4E-B6E1-0B97118AC0BF}|BabyCare\\BabyCare.csproj|solutionrelative:babycare\\areas\\admin\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{421A88CA-ADBF-4A4E-B6E1-0B97118AC0BF}|BabyCare\\BabyCare.csproj|c:\\users\\mert\\source\\repos\\babycare\\babycare\\areas\\admin\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{421A88CA-ADBF-4A4E-B6E1-0B97118AC0BF}|BabyCare\\BabyCare.csproj|solutionrelative:babycare\\areas\\admin\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{421A88CA-ADBF-4A4E-B6E1-0B97118AC0BF}|BabyCare\\BabyCare.csproj|c:\\users\\mert\\source\\repos\\babycare\\babycare\\views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -22,13 +26,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\Views\\Default\\Index.cshtml",
               "RelativeDocumentMoniker": "BabyCare\\Views\\Default\\Index.cshtml",
               "ToolTip": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\Views\\Default\\Index.cshtml",
               "RelativeToolTip": "BabyCare\\Views\\Default\\Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-01T11:48:51.933Z",
               "IsPinned": true,
@@ -37,14 +41,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\Areas\\Admin\\Views\\Shared\\Components\\_AdminLayoutSidebarComponent\\Default.cshtml",
-              "RelativeDocumentMoniker": "BabyCare\\Areas\\Admin\\Views\\Shared\\Components\\_AdminLayoutSidebarComponent\\Default.cshtml",
-              "ToolTip": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\Areas\\Admin\\Views\\Shared\\Components\\_AdminLayoutSidebarComponent\\Default.cshtml",
-              "RelativeToolTip": "BabyCare\\Areas\\Admin\\Views\\Shared\\Components\\_AdminLayoutSidebarComponent\\Default.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC0AAAB1AAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\Areas\\Admin\\Views\\About\\Index.cshtml",
+              "RelativeDocumentMoniker": "BabyCare\\Areas\\Admin\\Views\\About\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\Areas\\Admin\\Views\\About\\Index.cshtml",
+              "RelativeToolTip": "BabyCare\\Areas\\Admin\\Views\\About\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-01T13:06:31.148Z",
+              "WhenOpened": "2025-04-01T14:25:07.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AboutController.cs",
+              "DocumentMoniker": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "RelativeDocumentMoniker": "BabyCare\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "ToolTip": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "RelativeToolTip": "BabyCare\\Areas\\Admin\\Controllers\\AboutController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T14:25:05.431Z",
               "EditorCaption": ""
             },
             {

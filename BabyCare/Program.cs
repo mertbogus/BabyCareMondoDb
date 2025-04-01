@@ -7,6 +7,7 @@ using BabyCare.Services.IImageServices;
 using BabyCare.Services.InstructorServices;
 using BabyCare.Services.ProductServices;
 using BabyCare.Services.ServiceServices;
+using BabyCare.Services.TestimonialServices;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.Options;
@@ -35,6 +36,7 @@ builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<IServiceServices, ServiceServices>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<ITestimonialService, TestimonialService>();
 
 builder.Services.AddControllersWithViews();
 

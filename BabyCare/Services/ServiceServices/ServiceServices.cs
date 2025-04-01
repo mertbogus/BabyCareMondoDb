@@ -28,7 +28,7 @@ namespace BabyCare.Services.ServiceServices
 
         public async Task DeleteServiceAsync(string id)
         {
-            await _serviceCollection.DeleteOneAsync(id);
+            await _serviceCollection.DeleteOneAsync(x=>x.ServiceId==id);
         }
 
         public async Task<List<ResultServiceDto>> GetAllServiceAsync()
@@ -43,7 +43,7 @@ namespace BabyCare.Services.ServiceServices
             return _mapper.Map<UpdateServiceDto>(service);
         }
 
-        public async Task<List<ResultUIServiceDto>> GetServiceUItAsync()
+        public async Task<List<ResultUIServiceDto>> GetAllUIServiceAsync()
         {
             var values = await _serviceCollection.AsQueryable().ToListAsync();
             return _mapper.Map<List<ResultUIServiceDto>>(values);

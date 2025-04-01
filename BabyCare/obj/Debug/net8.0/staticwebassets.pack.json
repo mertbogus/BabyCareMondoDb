@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\BabyCare.ii8se14hu4.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\0ca17fe4-467a-4af5-8298-21556815c9e1.jpg",
+      "PackagePath": "staticwebassets\\Images\\0ca17fe4-467a-4af5-8298-21556815c9e1.jpg"
+    },
+    {
       "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\13467dfb-39f8-40ce-9092-8c82e00aeeba.png",
       "PackagePath": "staticwebassets\\Images\\13467dfb-39f8-40ce-9092-8c82e00aeeba.png"
     },
@@ -25,6 +29,18 @@
       "PackagePath": "staticwebassets\\Images\\276579ea-4def-4e67-8e16-7280471220e9.jpg"
     },
     {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\27e2257d-707c-4bc3-aad3-325e474a57d1.png",
+      "PackagePath": "staticwebassets\\Images\\27e2257d-707c-4bc3-aad3-325e474a57d1.png"
+    },
+    {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\3a43c690-3a96-4b6e-902e-093db02fc436.png",
+      "PackagePath": "staticwebassets\\Images\\3a43c690-3a96-4b6e-902e-093db02fc436.png"
+    },
+    {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\4d801c5d-12c2-4b19-881e-551597cf6b6b.jpg",
+      "PackagePath": "staticwebassets\\Images\\4d801c5d-12c2-4b19-881e-551597cf6b6b.jpg"
+    },
+    {
       "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\596339c4-f253-4508-b903-731fa8f7b120.jpg",
       "PackagePath": "staticwebassets\\Images\\596339c4-f253-4508-b903-731fa8f7b120.jpg"
     },
@@ -37,8 +53,20 @@
       "PackagePath": "staticwebassets\\Images\\7734a9fb-aee6-436a-9143-4c6d3d0cee9e.jpg"
     },
     {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\77dea6e2-d1d0-47fc-90d6-db5b146ac62a.png",
+      "PackagePath": "staticwebassets\\Images\\77dea6e2-d1d0-47fc-90d6-db5b146ac62a.png"
+    },
+    {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\7da20bd0-103e-407c-92b7-167227ac4527.png",
+      "PackagePath": "staticwebassets\\Images\\7da20bd0-103e-407c-92b7-167227ac4527.png"
+    },
+    {
       "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\8231a441-524d-4d29-8129-c07da617bc09.jpg",
       "PackagePath": "staticwebassets\\Images\\8231a441-524d-4d29-8129-c07da617bc09.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\a3ab64f1-bc61-4046-a423-4ced9b84953b.png",
+      "PackagePath": "staticwebassets\\Images\\a3ab64f1-bc61-4046-a423-4ced9b84953b.png"
     },
     {
       "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\ad6d968f-2010-4c2a-9e37-b78df5097789.jpg",
@@ -65,8 +93,16 @@
       "PackagePath": "staticwebassets\\Images\\bf45c807-317c-4374-acaf-1c830e2da590.jpg"
     },
     {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\d6aa8790-2ea9-42cf-9cf9-b89e52020b0e.png",
+      "PackagePath": "staticwebassets\\Images\\d6aa8790-2ea9-42cf-9cf9-b89e52020b0e.png"
+    },
+    {
       "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\d9a32d93-fbb3-4982-93f8-76fa3f8a8a93.jpg",
       "PackagePath": "staticwebassets\\Images\\d9a32d93-fbb3-4982-93f8-76fa3f8a8a93.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\db06b066-7216-4738-bd9d-d21a7b38f827.png",
+      "PackagePath": "staticwebassets\\Images\\db06b066-7216-4738-bd9d-d21a7b38f827.png"
     },
     {
       "Id": "C:\\Users\\MERT\\source\\repos\\BabyCare\\BabyCare\\wwwroot\\Images\\f6bf09a8-681e-4bcf-919b-b6867092e39b.jpg",
